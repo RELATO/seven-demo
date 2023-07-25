@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {{ block "title" . }}
+        {{- if .IsHome -}}{{ .Site.Title }}{{- else -}}{{ .Type }} | {{ .Site.Title }}{{- end -}}
+      {{ end }}
+    </title>
+
+    {{- partial "head/meta.html" . -}}
+    {{- block "extra_meta" . }}{{- end }}
+    {{- partial "head/link.html" . -}}
+    {{- block "extra_link" . }}{{- end }}
+  </head>
+  <body class="flex h-screen flex-col bg-slate-200">
+    {{- partial "header.html" . -}}
+    <div class="grow">
+      {{- block "main" . }}{{- end }}
+    </div>
+    {{ if .Site.Params.enableSearch }}
+      {{- partial "search.html" . -}}
+    {{ end }}
+    {{- partial "footer.html" . -}}
+
+    {{ $menuBtnJS := resources.Get "/js/menu-btn.js" }}
+    {{ if hugo.IsProduction }}
+      {{ $menuBtnJS = $menuBtnJS | minify | fingerprint }}
+    {{ end }}
+    <script src="{{ $menuBtnJS.RelPermalink }}" defer></script>
+
+    {{- block "script" . }}{{- end }}
+  </body>
+</html>

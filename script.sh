@@ -1,0 +1,1 @@
+HUGO_MODULE_WORKSPACE=hugo.toml hugo server --disableLiveReload --minify --gc -D
