@@ -5,46 +5,7 @@
     <div
       class="mb-8 flex flex-col items-center space-y-6 px-4 lg:flex-row lg:items-start lg:justify-between lg:space-y-0"
     >
-      <!-- Menu & Logo Container -->
-      <div class="flex flex-col items-center space-y-8 lg:items-start lg:space-y-4">
-        <!-- Logo -->
-        <a href="{{ .Site.BaseURL }}">
-          {{ $logoInfo := .Site.Params.logo }}
-          {{ $logoH := "h-10" }}
-          {{- with $logoInfo.footer_height -}}
-            {{ $logoH = printf "h-[%s]" . }}
-          {{- end -}}
-          {{ with or $logoInfo.img_footer $logoInfo.img }}
-            <img src="{{ . }}" alt="footer logo" id="logo-footer" class="{{ $logoH }}" />
-          {{ else }}
-            <span
-              class="{{ with $logoInfo.textColor }}
-                text-[{{ . }}]
-              {{ else }}
-                text-white
-              {{ end }} text-3xl font-bold"
-            >
-              {{ $logoInfo.text }}
-            </span>
-          {{ end }}
-        </a>
-
-        <!-- Menu Container -->
-        <div
-          class="flex flex-col items-center justify-around space-y-4 font-bold text-white md:flex-row md:justify-center md:space-x-6 md:space-y-0"
-        >
-          {{ range .Site.Menus.main }}
-            <div class="group h-10">
-              <a href="{{ .URL }}">
-                {{ $text := print .Name | safeHTML }}
-                {{ $text }}
-              </a>
-              <div class="mx-2 group-hover:border-b group-hover:border-blue-700"></div>
-            </div>
-          {{ end }}
-        </div>
-      </div>
-
+     
       <!-- Social & Theme & Copy Container -->
       <div class="flex flex-col items-center justify-between space-y-3 text-gray-500 lg:items-start">
         <!-- icons Container -->
@@ -61,22 +22,6 @@
               </div>
             {{ end }}
           {{ end }}
-        </div>
-
-        {{/* Theme Info */}}
-        <div class="flex flex-row items-center font-bold">
-          <span>Powered By</span>
-          <a href="https://gohugo.io/" aria-label="hugo link">
-            <img
-              src="https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"
-              alt="hugo logo"
-              class="mx-1 h-4"
-            />
-          </a>
-          <span> &#8739; Based on Theme</span>
-          <a href="https://github.com/mrhelloboy/seven" aria-label="The github address of seven theme" class="">
-            <img src="/images/default/seven-logo-dark.svg" alt="seven theme logo" class="mx-1 h-6" />
-          </a>
         </div>
 
         {{/* Copy */}}

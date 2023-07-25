@@ -1,6 +1,6 @@
-baseURL = 'https://seven-demo.supcat.cn/'
+baseURL = 'https://seven-demo.relato.pages/'
 languageCode = 'en-us'
-title = 'Seven的个人网站'
+title = 'Novo Demo Site'
 
 hasCJKLanguage = true
 paginate = 18
@@ -18,7 +18,7 @@ home = ["HTML", "Algolia"]
     mediaType = 'application/json'
 
 [Params]
-  description = "Seven Demo"
+  description = "Novo Site Demo"
   
   enableToTop = false
   enableSearch = true
@@ -34,7 +34,7 @@ home = ["HTML", "Algolia"]
     # eg: recommendedTypes = ["posts"]
     recommendedTypes = []
 
-  description = "记录学习、生活的个人博客网站"
+  description = "site novo feito com hugo"
   [Params.hero]
     img = "/images/hero/hero.jpg"
 
@@ -66,7 +66,7 @@ home = ["HTML", "Algolia"]
 
   # Copyright 
   [Params.copyright]
-    owner = "Seven"
+    owner = "VETORWEB"
     start_year = "2022"
 
   # Article Meta
@@ -146,20 +146,11 @@ home = ["HTML", "Algolia"]
     url = "/doc/"
     weight = 1
   [[menu.main]]
-    name = "Posts"
+    name = "Artigos"
     pre = "pen-tool"
     url = "/posts/"
     weight = 2
-  [[menu.main]]
-    name = "Categories"
-    pre = "categories"
-    url = "/categories/"
-    weight = 3
-  [[menu.main]]
-    name = "Tags"
-    pre = "tags"
-    url = "/tags/"
-    weight = 4
+  
 
 [module]
   # It is recommended that Chinese users modify the proxy configuration
